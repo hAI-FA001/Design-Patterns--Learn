@@ -22,6 +22,7 @@ class Singleton {
     private Singleton() {}
 
     public static Singleton getInstance() {
+        // NOT THREAD SAFE
         if (instance == null) {
             // lazy initialization
             instance = new Singleton();
