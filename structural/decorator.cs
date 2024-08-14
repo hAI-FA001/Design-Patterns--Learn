@@ -1,6 +1,7 @@
 // to extend an object w/o changing its implementation
 // implement the same interface as the compo, take the compoe in ctor, then add functionality
 
+namespace Decorator;
 
 public class DecoratorPattern
 {

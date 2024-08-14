@@ -1,12 +1,14 @@
 // this one is thread-safe
 
+namespace Singleton;
+
 public class ThreadSafeSingleton
 {
     private static readonly object _lock = new object();
 
-    public string Value { get; set; }
+    public string? Value { get; set; }
 
-    private static ThreadSafeSingleton _instance;
+    private static ThreadSafeSingleton? _instance;
 
     public static ThreadSafeSingleton GetInstance(string value)
     {
@@ -21,7 +23,7 @@ public class ThreadSafeSingleton
                 }
             }
         }
-        return _instance
+        return _instance;
     }
 
 }

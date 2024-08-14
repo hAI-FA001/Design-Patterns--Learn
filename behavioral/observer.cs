@@ -1,5 +1,7 @@
 // when u want to notify if something happened
 
+namespace Observer;
+
 public class ObserverPattern
 {
     public static void Main(string[] args)
@@ -76,7 +78,7 @@ public class Subscriber : ISubscriber
     public void Update(IPublisher pub)
     {
         var concretePub = pub as Publisher;
-        if (concretePub.IssueNumber > _latestIssue)
+        if (concretePub != null && concretePub.IssueNumber > _latestIssue)
         {
             _latestIssue = concretePub.IssueNumber;
         }

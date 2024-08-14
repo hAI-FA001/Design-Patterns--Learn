@@ -7,7 +7,7 @@ public class StrategyPattern
     public static void Main(string[] args)
     {
         var cake = Cake.BirthdayCake;
-        Strategy s;
+        ICakeStrategy s;
         switch (cake)
         {
             case Cake.BirthdayCake:
@@ -18,17 +18,18 @@ public class StrategyPattern
                 break;
             default:
                 s = new BirthdayCake();
-                break
+                break;
         }
-    }
 
-    foreach (Ingredient i in s.GetIngredients()) {
-        Console.WriteLine($"{i.Item}: {i.Quantity}{i.Unit}")
-    }
-    
-    foreach (string m in s.GetMethod())
-    {
-        Console.WriteLine(m);
+        foreach (Ingredient i in s.GetIngredients())
+        {
+            Console.WriteLine($"{i.Item}: {i.Quantity}{i.Unit}");
+        }
+
+        foreach (string m in s.GetMethod())
+        {
+            Console.WriteLine(m);
+        }
     }
 }
 
@@ -47,7 +48,7 @@ public class BirthdayCake : ICakeStrategy
             new Ingredient(2, "tsp", "baking powder"),
             new Ingredient(4, "", "eggs"),
             // etc
-        }
+        };
 
         return ingredients;
     }
@@ -70,7 +71,7 @@ public class CarrotCake : ICakeStrategy
         var ingredients = new List<Ingredient> {
             new Ingredient(100, "g", "natural yoghurt"),
             // etc
-        }
+        };
 
         return ingredients;
     }
@@ -80,7 +81,7 @@ public class CarrotCake : ICakeStrategy
         var method = new List<string> {
             "Heat the oven to 180/160C"
             // etc
-        }
+        };
 
         return method;
     }
@@ -88,8 +89,8 @@ public class CarrotCake : ICakeStrategy
 
 public enum Cake
 {
-    BirthdayCake = 0;
-    CarrotCake = 1;
+    BirthdayCake = 0,
+    CarrotCake = 1
 }
 
 public class Ingredient

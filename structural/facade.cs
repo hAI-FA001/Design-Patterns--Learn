@@ -1,6 +1,8 @@
 // facade helps in simplicity, different libs and frameworks can make our code messy
 // we make our own interface around the libraries
 
+namespace Facade;
+
 public class FacadePattern
 {
     public static void Main(string[] args)
@@ -72,22 +74,22 @@ public class BadLogger : IBadLogger
         Console.WriteLine($"{DateTime.UtcNow:s} [{type.ToString().ToUpper()}] {message}");
         if (ex != null)
         {
-            Console.WriteLine($"Exception: {ex.Message}\n{ex.StackTrace}")
+            Console.WriteLine($"Exception: {ex.Message}\n{ex.StackTrace}");
         }
     }
 }
 
 public enum LogTarget
 {
-    Console = 0;
-    File = 1;
-    Slack = 2;
-    Database = 3;
+    Console = 0,
+    File = 1,
+    Slack = 2,
+    Database = 3,
 }
 
 public enum LogType
 {
-    Info = 0;
-    Error = 1;
-    Fatal = 2;
+    Info = 0,
+    Error = 1,
+    Fatal = 2,
 }
