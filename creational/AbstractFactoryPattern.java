@@ -4,116 +4,115 @@
 public class AbstractFactoryPattern {
     public static void main(String[] args) {
         AbstractFactory factory = AbstractFactoryProducer.getFactory("Premium");
-        
+
         Car car = factory.getInstance(1000000);
         System.out.println(car);
-        
-        Car car = factory.getInstance(3000000);
+
+        car = factory.getInstance(3000000);
         System.out.println(car);
-        
-        
+
         factory = AbstractFactoryProducer.getFactory("Economic");
-        Car car = factory.getInstance(100000);
+        car = factory.getInstance(100000);
         System.out.println(car);
-        
-        Car car = factory.getInstance(200000);
+
+        car = factory.getInstance(200000);
         System.out.println(car);
     }
 }
 
-public class AbstractFactoryProducer {
+class AbstractFactoryProducer {
     public static AbstractFactory getFactory(String value) {
-        if(value == "Economic") {
+        if (value == "Economic") {
             return new EconomicCarFactory();
-        }
-        else if(value == "Luxury" || value == "Premium") {
+        } else if (value == "Luxury" || value == "Premium") {
             return new LuxuryCarFactory();
-        }
-        return null
-    }
-}
-
-public interface AbstractFactory {
-    public static Car getInstance(int price);
-}
-
-public EconomicCarFactory implements AbstractFactory {
-    @Override
-    public static Car getInstance(int price) {
-        if(price <= 100000) {
-            return new EconomicCarA();
-        }
-        else {
-            return new EconomicCarB();
-        }
-    }
-}
-
-public LuxuryCarFactory implements AbstractFactory {
-    @Override
-    public static Car getInstance(int price) {
-        if(price >= 1000000 && price < 2000000) {
-            return new LuxuryCarA();
-        } else if (price > 2000000) {
-            retur nenw LuxuryCarB();
         }
         return null;
     }
 }
 
-public interface Car {
-    public int getTopSpeed();
-    
+interface AbstractFactory {
+    public Car getInstance(int price);
+}
+
+class EconomicCarFactory implements AbstractFactory {
+
+    @Override
+    public Car getInstance(int price) {
+        if (price <= 100000) {
+            return new EconomicCarA();
+        } else {
+            return new EconomicCarB();
+        }
+    }
+}
+
+class LuxuryCarFactory implements AbstractFactory {
+
+    @Override
+    public Car getInstance(int price) {
+        if (price >= 1000000 && price < 2000000) {
+            return new LuxuryCarA();
+        } else if (price > 2000000) {
+            return new LuxuryCarB();
+        }
+        return null;
+    }
+}
+
+abstract class Car {
+    public abstract int getTopSpeed();
+
     @Override
     public String toString() {
         return "Car: " + this.getTopSpeed();
     }
 }
 
-public class EconomicCarA implements Car {
+class EconomicCarA extends Car {
     @Override
     public int getTopSpeed() {
-        100;
+        return 100;
     }
-    
+
     @Override
     public String toString() {
         return super.toString() + "\nEconomic Car A";
     }
 }
 
-public class EconomicCarB implements Car {
+class EconomicCarB extends Car {
     @Override
     public int getTopSpeed() {
-        150;
+        return 150;
     }
-    
+
     @Override
     public String toString() {
         return super.toString() + "\nEconomic Car B";
     }
 }
 
-public class LuxuryCarA implements Car {
+class LuxuryCarA extends Car {
     @Override
     public int getTopSpeed() {
-        200;
+        return 200;
     }
-    
+
     @Override
     public String toString() {
-        return super.toString() + "\Luxury Car A";
+        return super.toString() + "\nLuxury Car A";
     }
 }
 
-public class LuxuryCarB implements Car {
+class LuxuryCarB extends Car {
     @Override
     public int getTopSpeed() {
-        250;
+        return 250;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\Luxury Car B";
+        return super.toString() + "\nLuxury Car B";
     }
 }
