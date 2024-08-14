@@ -1,6 +1,6 @@
 // defines interface/method for creating an object
 // allows subclasses/methods to decide which class to instantiate
-// hides instantiation logic, provides uniform interface to the client 
+// hides instantiation logic, provides uniform interface to the client, keeps creation logic in 1 place
 
 
 public class FactoryPattern {

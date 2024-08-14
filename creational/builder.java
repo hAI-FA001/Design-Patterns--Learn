@@ -1,5 +1,9 @@
 // separates construction of object from its final representation (same construction can give different representations)
 // internal construction logic is also hidden
+// can orchestrate the steps (have different order of steps while creating)
+// can have another class Director which takes in a builder, builds objects based on the type of builder with pre-configured steps
+// (e.g. Director either takes in CSStudentBuilder or MedicalStudentBuilder, then use .assignLaptop(true) for CSStudent, client only calls .createStudent())
+// eliminates the need for tons of ctors
 
 public class BuilderPattern {
     public static void main(String[] args) {

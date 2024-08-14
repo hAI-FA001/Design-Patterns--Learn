@@ -1,6 +1,9 @@
 // prototype helps in cloning (don't need to create new objects from scratch)
 // new objs are made by copying/cloning the prototype (so we have something to start with)
 // can be a shallow copy or a deep copy
+// useful when object creation is expensive
+// e.g. new Obj() then a complex setup process like obj.readFromFile() => expensive, so clone an existing object and reuse its properties instead of calling readFromFile() again
+// client also doesn't need to know about the cloning logic or the details of the class either (would need this knowledge if we did the cloning in main() ourselves)
 
 public class PrototypePattern {
     public static void main(String[] args) {
