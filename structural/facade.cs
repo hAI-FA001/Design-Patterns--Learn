@@ -1,5 +1,6 @@
-// facade helps in simplicity, different libs and frameworks can make our code messy
-// we make our own interface around the libraries
+// facade helps in simplicity, e.g. using all kinds of libs and frameworks can make our code messy
+// it hides the complexity
+// we make our own interface around the libraries, exposing only necessary details
 
 namespace Facade;
 

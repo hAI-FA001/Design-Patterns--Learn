@@ -1,5 +1,5 @@
 # to make an object interface with another
-
+# acts as a bridge b/w 2 incompatible interfaces
 
 class UsbCable:
     def __init__(self):

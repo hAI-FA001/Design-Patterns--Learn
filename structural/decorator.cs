@@ -1,5 +1,7 @@
 // to extend an object w/o changing its implementation
-// implement the same interface as the compo, take the compoe in ctor, then add functionality
+// implement the same interface as the compo, take the compo in ctor, then add functionality
+// the Decorator itself is also a compo so we can further decorate it, e.g. new MushroomPizza(new ExtraCheesePizza(new FarmhousePizza()))
+// avoids class explosion: making many classes for combinations of features (lots of combinations can lead to too many classes e.g. e.g. Mushroom, Cheese, Muchroom + Cheese, etc)
 
 namespace Decorator;
 
