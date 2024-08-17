@@ -1,4 +1,4 @@
-// want all classes to follow specific steps
+// want all classes to follow specific steps/main algo
 // but provide flexibility to have their own logic
 // e.g. no matter what way of payment, you want them all to follow some specific steps
 // looks similar to Strategy but here all classes must follow a common flow

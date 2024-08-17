@@ -1,7 +1,9 @@
 // turns requests/commands into objects
-// can parametrize or queue commands
+// can parametrize or queue commands, pass them to methods, etc
 // decouples the Sender and Receiver
 // e.g. if "turn AC on" needed 10 methods to be called, then Sender would need to know and invoke them
+// e.g. if have tons of similar classes that do different things, would lead to tons of subclasses
+// e.g. CopyingText can be done via buttons, context menu, other places -> would need to duplicate code if don't turn Copying into its own class
 // seems like Facade (hiding complexity) but is different (we turn commands/requests into objects)
 
 package behavioral;

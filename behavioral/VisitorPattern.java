@@ -1,5 +1,5 @@
 // allows adding operations to existing classes w/o modifying them
-// i.e. adding a new operation doesn't require adding it to the class (or subclasses)
+// i.e. adding a new operation doesn't require modifying the class
 // e.g. we move operations like calcPrice(), performMaintenance() from the class into Visitor
 // the class is no longer modified when adding operations
 // sounds like Decorator but this is focused on operations (operations become classes)
