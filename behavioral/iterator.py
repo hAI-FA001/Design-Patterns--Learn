@@ -1,4 +1,4 @@
-# easily loop over values
+# easily loop over values, regardless of underlying representation of the collection
 
 class LinkedNode:
     def __init__(self, value=0, next=None):

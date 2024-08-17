@@ -1,4 +1,5 @@
 // when u want to notify if something happened
+// publisher/subscriber, observable/observer
 
 namespace Observer;
 

@@ -1,4 +1,5 @@
-// if have multiple ways to do the same thing e.g. navigate (walking/cycling), cake (different cakes), each are "same" but have different processes to achieve it
+// if have multiple ways to do the same thing
+// e.g. navigate (walking/cycling), cake (different cakes), payment (credit, cash), each are "same" but have different processes/algos to achieve it
 
 namespace Strategy;
 
